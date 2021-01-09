@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laya Fine Arts</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lobster&family=Nunito:wght@300;400;600;700;800&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NavBar -->
+
+    <header class="header">
+      <div class="wrapper">
+        <nav class="nav">
+          <div class="logo">
+            <h2>Laya Fine Arts</h2>
+          </div>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
+            <li>
+              <a href="#">Classes</a>
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Timings</a>
+            </li>
+            <li>
+              <a href="#">Events</a>
+            </li>
+            <li>
+              <a href="#">Gallery</a>
+            </li>
+            <li>
+              <a href="#">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-btn">
+            <div class="btn1"></div>
+            <div class="btn2"></div>
+            <div class="btn3"></div>
+          </div>
+
+          <div class="text-box">
+            <p>Events</p>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Events -->
+
+    <section class="event">
+      <div class="container">
+        <div class="event-inputs mb-5">
+          <input type="text" placeholder="Event Name" class="input-eventname" />
+          <input
+            type="text"
+            placeholder="Description"
+            class="input-eventdesc"
+          />
+          <input type="date" name="date" id="date" class="input-eventtime" />
+          <button id="addEvent" class="btn btn-primary">Add Event!</button>
+        </div>
+        <div class="row event-main">
+          <div class="col-md-6 col-sm-12">
+            <div class="event-details">
+              <h3 class="event-title">Event Title</h3>
+              <p class="event-desc">Lorem ipsum dolor sit amet.</p>
+              <p class="event-date">20-05-2021</p>
+              <img src="image/class-1.jpg" alt="event" class="event-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+    <!-- <script>
+      // Events adding
+
+      const evntBtn = document.getElementById("addEvent");
+      console.log(evntBtn);
+
+      evntBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Reading Values
+
+        const evntName = document.querySelector(".input-eventname");
+        const eventDesc = document.querySelector(".input-eventdesc");
+        const evntTime = document.querySelector(".input-eventtime");
+
+        if (evntName.value && evntTime.value && eventDesc.value) {
+          const event = document.querySelector(".event-main");
+          const html = `<div class="col-md-6 col-sm-12">
+  <div class="event-details">
+    <h3 class="event-title">${evntName.value}</h3>
+    <p class="event-desc">${eventDesc.value}</p>
+    <p class="event-date">${evntTime.value}</p>
+    <img src="image/class-1.jpg" alt="event" class="event-img" />
+  </div>
+</div>`;
+
+          // clearing Fields
+          evntName.value = "";
+          evntTime.value = "";
+          eventDesc.value = "";
+
+          event.insertAdjacentHTML("afterbegin", html);
+        } else {
+          alert("Enter Valid Details!");
+        }
+      });
+    </script> -->
+  </body>
+</html>
