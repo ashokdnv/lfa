@@ -36,87 +36,87 @@ const images = ["bg-1", "bg-2", "bg-3", "bg-4"];
 
 // Events adding
 
-const evntBtn = document.getElementById("addEvent");
-console.log(evntBtn);
+// const evntBtn = document.getElementById("addEvent");
+// console.log(evntBtn);
 
-evntBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  // Reading Values
+// evntBtn.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   // Reading Values
 
-  const evntName = document.querySelector(".input-eventname");
-  const eventDesc = document.querySelector(".input-eventdesc");
-  const evntTime = document.querySelector(".input-eventtime");
+//   const evntName = document.querySelector(".input-eventname");
+//   const eventDesc = document.querySelector(".input-eventdesc");
+//   const evntTime = document.querySelector(".input-eventtime");
 
-  if (evntName.value && evntTime.value && eventDesc.value) {
-    const event = document.querySelector(".event-main");
-    const html = `<div class="col-md-6 col-sm-12">
-  <div class="event-details">
-    <h3 class="event-title">${evntName.value}</h3>
-    <p class="event-desc">${eventDesc.value}</p>
-    <p class="event-date">${evntTime.value}</p>
-    <img src="image/class-1.jpg" alt="event" class="event-img" />
-  </div>
-</div>`;
+//   if (evntName.value && evntTime.value && eventDesc.value) {
+//     const event = document.querySelector(".event-main");
+//     const html = `<div class="col-md-6 col-sm-12">
+//   <div class="event-details">
+//     <h3 class="event-title">${evntName.value}</h3>
+//     <p class="event-desc">${eventDesc.value}</p>
+//     <p class="event-date">${evntTime.value}</p>
+//     <img src="image/class-1.jpg" alt="event" class="event-img" />
+//   </div>
+// </div>`;
 
-    // clearing Fields
-    evntName.value = "";
-    evntTime.value = "";
-    eventDesc.value = "";
+//     // clearing Fields
+//     evntName.value = "";
+//     evntTime.value = "";
+//     eventDesc.value = "";
 
-    event.insertAdjacentHTML("afterbegin", html);
-  } else {
-    alert("Enter Valid Details!");
-  }
-});
+//     event.insertAdjacentHTML("afterbegin", html);
+//   } else {
+//     alert("Enter Valid Details!");
+//   }
+// });
 
 // Gallery Local Storage
 
-const form = document.getElementById("form");
-const imgGallery = document.getElementById("result");
-const removeBtn = document.getElementById("remove-btn");
+// const form = document.getElementById("form");
+// const imgGallery = document.getElementById("result");
+// const removeBtn = document.getElementById("remove-btn");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  const reader = new FileReader();
-  const name = document.getElementById("image").files[0].name;
-  console.log(name);
+//   const reader = new FileReader();
+//   const name = document.getElementById("image").files[0].name;
+//   console.log(name);
 
-  reader.addEventListener("load", function () {
-    if (this.result && localStorage) {
-      window.localStorage.setItem(name, this.result);
-      imgGallery.innerHTML = "";
-      showImages();
-      alert("Img Stored!");
-    } else {
-      alert("Not Stored!");
-    }
-  });
+//   reader.addEventListener("load", function () {
+//     if (this.result && localStorage) {
+//       window.localStorage.setItem(name, this.result);
+//       imgGallery.innerHTML = "";
+//       showImages();
+//       alert("Img Stored!");
+//     } else {
+//       alert("Not Stored!");
+//     }
+//   });
 
-  reader.readAsDataURL(document.getElementById("image").files[0]);
-});
+//   reader.readAsDataURL(document.getElementById("image").files[0]);
+// });
 
-function showImages() {
-  for (let i = 0; i < window.localStorage.length; i++) {
-    const res = window.localStorage.getItem(window.localStorage.key(i));
-    // const image = new Image();
-    // image.src = res;
+// function showImages() {
+//   for (let i = 0; i < window.localStorage.length; i++) {
+//     const res = window.localStorage.getItem(window.localStorage.key(i));
+//     // const image = new Image();
+//     // image.src = res;
 
-    const newHtml = `
-    <img
-      src="${res}"
-      alt="image"
-    />`;
+//     const newHtml = `
+//     <img
+//       src="${res}"
+//       alt="image"
+//     />`;
 
-    imgGallery.insertAdjacentHTML("afterbegin", newHtml);
-  }
-}
+//     imgGallery.insertAdjacentHTML("afterbegin", newHtml);
+//   }
+// }
 
-removeBtn.addEventListener("click", function (e) {
-  e.preventDefault();
+// removeBtn.addEventListener("click", function (e) {
+//   e.preventDefault();
 
-  window.localStorage.clear();
-  imgGallery.innerHTML = "";
-});
+//   window.localStorage.clear();
+//   imgGallery.innerHTML = "";
+// });
 
-showImages();
+// showImages();
