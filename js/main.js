@@ -26,13 +26,13 @@ const images = ["bg-1", "bg-2", "bg-3", "bg-4"];
 //   header.style.background = `url(../image/bg-${i}.jpg), linear-gradient(rgba(#000, 0.4), rgba(#000, 0.5))`;
 // }, 2000);
 
-// const infoImgs = ["img-1", "img-2", "img-3"];
-// const infoImagesBox = document.querySelector(".info-images__img");
-// setInterval(() => {
-//   const num = Math.floor(Math.random() * 2 + 1);
+const infoImgs = ["img-1", "img-2", "img-3"];
+const infoImagesBox = document.querySelector(".info-images__img");
+setInterval(() => {
+  const num = Math.floor(Math.random() * 2 + 1);
 
-//   infoImagesBox.src = `image/img-${num}.jpg`;
-// }, 2000);
+  infoImagesBox.src = `image/img-${num}.jpg`;
+}, 2000);
 
 // Events adding
 
