@@ -73,9 +73,9 @@ body {
     align-items: center;
     width: 55%;
     height: 100%;
+    list-style: none;
 
     li {
-      list-style: none;
       position: relative;
       transition: all 0.5s;
       height: 70%;
@@ -87,19 +87,31 @@ body {
         position: absolute;
         top: 55px;
         left: 0;
-        width: 12rem;
+        width: 23rem;
         padding: 0;
         height: auto;
-        background-color: #fff;
+        background-color: #dfdede;
         border-radius: 5px;
         text-align: center;
         transition: all 0.5s;
+        overflow: hidden;
+        z-index: 22222;
 
         li {
-          border-bottom: 1px solid #535353;
-          margin: 1rem 1.5rem 0.5rem;
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 1rem 1.5rem;
+
+          &:hover {
+            background-color: $color-primary-1;
+          }
+
+          &:hover > a {
+            color: #fff;
+          }
           a {
-            color: #000;
+            color: #494949;
           }
         }
       }
@@ -304,6 +316,46 @@ body {
       width: 30rem;
       height: 20rem;
     }
+  }
+}
+
+// Footer
+
+.footer {
+  padding: 7rem 0;
+  background-color: #373a4e;
+  color: #fff;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.7rem;
+  }
+
+  &-logo {
+    width: 85%;
+    height: auto;
+  }
+
+  &-links {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #fff;
+
+          &:hover {
+            color: $color-primary-1;
+          }
+        }
+      }
+    }
+  }
+
+  &-address {
   }
 }
 
